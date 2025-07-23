@@ -2,6 +2,9 @@
 
 #include "XGMaxKBOpenAsyncAction.h"
 
+#include "Async/TaskGraphInterfaces.h"
+#include "Async/Async.h"
+
 #include "Policies/CondensedJsonPrintPolicy.h"
 #include "Serialization/JsonWriter.h"
 #include "Serialization/JsonReader.h"
@@ -70,7 +73,7 @@ void UXGMaxKBOpenAsyncAction::Activate_Internal()
 	TMap<FString, FString> Headers;
 
 	Headers.Add(TEXT("Content-Type"), TEXT("application/json"));
-	Headers.Add(TEXT("AUTHORIZATION"), APIKey);
+	Headers.Add(TEXT("AUTHORIZATION"), TEXT("Bearer ")+APIKey);
 
 	SendHttp(MaxKBURL, Headers);
 

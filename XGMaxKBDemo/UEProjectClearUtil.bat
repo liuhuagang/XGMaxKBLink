@@ -16,6 +16,7 @@ rem 虚幻项目文件
 echo ------------------------------------------------------------------
 echo 清理项目文件夹
 call :DeleteDirectory ".vs"
+call :DeleteDirectory ".idea"
 call :DeleteDirectory "Build"
 call :DeleteDirectory "Binaries"
 call :DeleteDirectory "DerivedDataCache"

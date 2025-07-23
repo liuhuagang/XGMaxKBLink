@@ -97,7 +97,7 @@ void UXGMaxKBChatAsyncAction::Activate_Internal()
 	TMap<FString, FString> Headers;
 
 	Headers.Add(TEXT("accept"), TEXT("application/json"));
-	Headers.Add(TEXT("AUTHORIZATION"), APIKey);
+	Headers.Add(TEXT("AUTHORIZATION"), TEXT("Bearer ")+APIKey);
 	Headers.Add(TEXT("Content-Type"), TEXT("application/json"));
 
 	FString ConentString = TEXT("");
